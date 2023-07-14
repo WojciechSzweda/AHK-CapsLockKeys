@@ -11,7 +11,7 @@ A_HotkeyModifierTimeout := 100 ; prevents sticking of layer key
 SetCapsLockState("AlwaysOff")
 
 CapsLock & Esc::
-{ ; V1toV2: Added bracket
+{
 CapsLockState := GetKeyState("CapsLock", "T") ? "D" : "U"
 if (CapsLockState = "D")
 	SetCapsLockState("AlwaysOff")
@@ -19,10 +19,9 @@ else
 	SetCapsLockState("AlwaysOn")
 KeyWait("Esc")
 return
-} ; V1toV2: Added bracket in the end
+}
 
 #HotIf GetKeyState("CapsLock", "P")
-; The symbols are: ! = Alt, ^ = Ctrl, + = Shift
 i::Up
 j::Left
 l::Right
@@ -50,9 +49,8 @@ c::`
 q::Esc
 
 
-{ ; V1toV2: Added bracket
+{
 #InputLevel 1
 ; Backspace::Return ; this disables the backspace in case you want train your muscle memory
 #InputLevel 0 0
-
-} ; V1toV2: Added bracket in the end
+}
